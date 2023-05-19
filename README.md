@@ -3,7 +3,7 @@
 ## Kauppakassi sovellus
 - Sovelluksen tavoitteena on helpottaa käyttäjän ruokakauppa käyntejä.
 - Sovellukseen kirjaudutaan omilla käyttäjätunnuksilla. Kaikki käyttäjät kuuluvat käyttäjä luokaan
-  - Käyttäjä luokan oikeuksiin kuuluvat kauppojen tarkastelu, arvostelujen sekä kommenttien jättö kaupoista sekä kauppakassin sovelluksen halvimman kaupan haku ominaisuutta (lisää myöhemmin)
+  - Käyttäjä luokan oikeuksiin kuuluvat kauppojen tarkastelu, arvostelujen sekä kommenttien jättö kaupoista sekä kauppakassi sovelluksen halvimman kaupan haku ominaisuuden käyttö (lisää myöhemmin)
 - Sovellukseen voi myös kirjautua admin tunnuksilla, jolla on kaikki käyttäjien oikeudet sekä kommenttien poisto oikeus, tavaroiden hintojen muutto kaupoissa sekä mahdollisesti käyttäjän poistaminen palvelusta pysyvästi.
 - Halvimman kaupan haku toteutetaan kauppalistan rakennuksena saatavilla olevista tuotteista, ja kun kauppalista on valmis, käyttäjä voi hakea ilmoittamiensa tuotteiden halvinta kokonaishintaa, eli missä kannattaa käydä ostoksilla, jotta saa tuotteet mahdollisimman halvalla. (Tässä saattaa tulla muutama  hankaluus esim. jos jokin tuote ei ole saatavissa halvimmassa kaupassa, niin kuinka toimitaan tällöin) 
 - Tietokannallisesti:
