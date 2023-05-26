@@ -1,0 +1,106 @@
+
+
+.top {
+    clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 50px));
+  }
+  .bottom {
+    clip-path: polygon(0 0,100% 50px,100% 100%,0 100%);
+    margin-top: -30px;
+  }
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Mochiy Pop One", sans-serif;
+	background-color: rgb(51, 0, 69);
+}
+
+header {
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+}
+
+main {
+	display: grid;
+	align-items: center;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px; 
+	
+}
+
+.pillar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	position:relative;
+	overflow: hidden;
+}
+
+.pillar img {
+	transition: transform .5s ease;
+}
+
+.pillar:hover img {
+	transform: scale(1.1);
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	transition: opacity .5s ease;
+}
+
+.pillar:hover .overlay {
+	opacity: 1;
+}
+.pillar:hover .hidden {
+	display: block;
+}
+.overlay:before {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.overlay a {
+	display: inline-block;
+	color: #fff;
+	font-size: 24px;
+	margin-top: 20px;
+	
+	background-color: #333;
+	padding: 10px 20px;
+	border-radius: 5H
+	
+}
+.hidden {
+	display: none;
+	margin-top: -30px;
+	
+	color: white;
+	
+}
+.shown {
+	display: inline-block;
+	
+	
+	color: white;
+	
+}
+.hidden:hover {
+	display: block;
+}
+
+.logo{
+	max-height: 300px;
+	max-width: 300px;
+}

@@ -1,0 +1,61 @@
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ostoscorp</title>
+	<link rel="stylesheet", href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		{% if id %}
+		<div class="admin_nappi">
+			<form action="/adminpage" method="POST">
+				<input type="submit" value="adminpage">
+			</form>
+		</div>
+		{% endif %}
+		<h1>Ostoscorp</h1>
+        <h3>the place where prices meet your demand</h3>
+		<form action="/logout" method="POST">
+			<input type="submit" value="log out">
+		</form>
+	</header>
+	<main>
+		{% for shop in shop_list %}
+		<section class="pillar">
+			<a href="{{url_for('homeshop', id=shop.id)}}">
+				{% if shop[4]==True %}
+				<img class="logo" src="data:image/png,{{ shop[5] }}" alt="shop logo">
+				{% else %}
+				<img class="logo" src="{{ url_for('static', filename='placeholder.PNG') }}" alt="Shop logo">
+				{% endif %}
+				<div class="overlay"></div>
+			</a>
+            <br>
+			<div class="shown">
+				<p>
+					{{shop[1]}}
+				</p>
+			</div>
+            <div class="hidden">
+                <p>See more</p>
+            </div>
+		</section>
+		{% endfor %}
+	</main>
+    <div>
+        Hintalaskuri
+
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>

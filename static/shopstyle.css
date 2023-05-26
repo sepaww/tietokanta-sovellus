@@ -1,0 +1,173 @@
+
+header{
+  background-color: black;
+}
+body {
+    background-color: rgb(51, 0, 69);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .logo{
+    max-height: 300px;
+    max-width: 300px;
+  }
+  .title {
+    font-size: 32px;
+  }
+  
+  .description {
+    margin-top: 20px;
+  }
+  
+  .comment-section {
+    margin-top: 40px;
+  }
+  
+  .comment-title {
+    font-size: 24px;
+  }
+  
+  .comment-form {
+    margin-top: 20px;
+  }
+  
+  .comment-input {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .comment-submit {
+    padding: 10px 20px;
+    background-color: #555555;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .comment-submit:hover {
+    background-color: #333333;
+  }
+
+
+
+
+
+.star-rating {
+    display: inline-block;
+    direction: rtl;
+  }
+  
+  .star-rating input[type="radio"] {
+    display: none;
+  }
+  
+  .star-rating label {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    background-image: url(emptystar.png); 
+    background-size: cover;
+    cursor: pointer;
+  }
+  
+  .star-rating input[type="radio"]:checked ~ label {
+    background-image: url(filledstar.png); 
+  }
+
+
+  .commentbox {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .commentbox p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .commentbox p.comment {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .commentbox p.username {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .commentbox p.date {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .commentbox p.likes {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .commentbox:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent transparent #f2f2f2;
+    transform: translateY(-50%);
+  }
+  .updoot{
+    max-width: 30px;
+    max-height: 40px;
+  }
+
+  .ratebutton {
+    margin-left: 100px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ratebutton:hover {
+    background-color: #555;
+  }
+  
+  .ratebutton:focus {
+    outline: none;
+  }
+
+  .homebutton {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  .homebutton:hover {
+    background-color: #555;
+  }

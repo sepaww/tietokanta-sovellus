@@ -1,0 +1,59 @@
+<head>
+    <title>Dark Shop</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='shopstyle.css') }}">
+  </head>
+  <body>
+    <header>
+      <form action="/home" method="POST">
+        <input class="homebutton" type="submit" value="home">
+      </form>
+    </header>
+    <div class="container">
+      <h1 class="title"> {{info[1]}} </h1>
+      {% if info[4]==True %}
+				<img class="logo" src="data:image/png,{{ info[5] }}" alt="shop logo">
+			{% else %}
+				<img class="logo" src="{{ url_for('static', filename='placeholder.PNG') }}" alt="Shop logo">
+			{% endif %}
+      <div class="description">
+        <p>Here you can see shop rating and comments</p>
+      </div>
+      <div class="star-rating">
+        <form action="{{ url_for('addrating', tid=tid) }}" method="POST">
+          <input type="radio" id="star5" name="rating" value="5" src="{{ url_for('static', filename='emptystar.png') }}"/>
+          <label for="star5"></label>
+          <input type="radio" id="star4" name="rating" value="4" src="{{ url_for('static', filename='emptystar.png') }}"/>
+          <label for="star4"></label>
+          <input type="radio" id="star3" name="rating" value="3" src="{{ url_for('static', filename='emptystar.png') }}"/>
+          <label for="star3"></label>
+          <input type="radio" id="star2" name="rating" value="2" src="{{ url_for('static', filename='emptystar.png') }}"/>
+          <label for="star2"></label>
+          <input type="radio" id="star1" name="rating" value="1" src="{{ url_for('static', filename='emptystar.png') }}"/>
+          <label for="star1"></label>
+          <button class="ratebutton" type="submit">Rate</button>
+        </form>
+        <p>Average rating: {{ avgrate }}</p>
+      </div>
+      <div class="comment-section">
+        <h2 class="comment-title">Leave a Comment</h2>
+        <form class="comment-form" action="/addcomment" method="POST">
+          <input type="hidden" name="id" value="{{info[0]}}">
+          <textarea class="comment-input" name="comment" placeholder="Write your comment here"></textarea>
+          <button class="comment-submit">Submit</button>
+        </form>
+        {% if comments is iterable %}
+          {% for comment in comments %}
+          <div class="commentbox">
+            <p class="comment">{{ comment[0] }}</p>
+            <p class="username">{{ comment[3] }}</p>
+            <p class="date">{{ comment[1] }}</p>
+            <p class="likes">{{ comment[2] }}</p>
+            <a class="updoot" href={{url_for('like', cid=comment[4], uid=ident, tid=comment[6])}}>
+              <img class="updoot" src="{{ url_for('static', filename='upvote.png') }}" alt="Like" />
+            </a>
+          </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </body>

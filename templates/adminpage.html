@@ -1,0 +1,31 @@
+add store
+<form action="/addstore" method="POST" enctype="multipart/form-data">
+    store name:
+    <input type="text" name="name">
+    <br>
+    x-cord:
+    <input type="text" name="x">
+    <br>
+    y-cord:
+    <input type="text" name="y">
+    <br>
+    possible picture:
+    <input type="file" name="picture" accept="image/*">
+    <br>
+    <input type="submit" value="add">
+</form>
+
+add item
+<form action="/additem" method="POST">
+    shop's name:
+    <input type="text" name="shop_name">
+    <br>
+    price:
+    <input type="text" name="price">
+    <br>
+    items's name:
+    <input type="text" name="item_name">
+    <br>
+    <input type="submit" value="add">
+</form>
+
