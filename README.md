@@ -31,3 +31,20 @@
   - hintalaskuri result
     - näyttää hintalaskurin tulokset sekä linkkaa kaupan sivuille ja takaisin homeen.
   
+  ## Käyttöönotto
+  -luo kansio projektille
+  - siirry kansioon
+  ```bash
+git clone https://github.com/sepaww/tietokanta-sovellus.git
+```
+  - luo kansioon oma venv sekä .env kansio
+  - sijoita .env kansioon postgresql tietokannan nimi
+  - asenna virtuaaliympäristöön riippuvuudet:
+  ```bash
+  pip install -r requirements.txt
+  ```
+  - alusta tietokanta:
+  ```bash
+  psql < schema.sql
+   ```
+  - käynnistä app.py ja rekisteröi käyttäjä. Ensimmäisestä käyttäjästä tulee ylläpitäjä
