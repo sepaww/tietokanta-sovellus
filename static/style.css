@@ -1,12 +1,6 @@
 
 
-.top {
-    clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 50px));
-  }
-  .bottom {
-    clip-path: polygon(0 0,100% 50px,100% 100%,0 100%);
-    margin-top: -30px;
-  }
+
 body {
 	margin: 0;
 	padding: 0;
@@ -104,3 +98,44 @@ main {
 	max-height: 300px;
 	max-width: 300px;
 }
+
+.hintalaskuri {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #333;
+	color: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hintalaskuri form {
+	margin-top: 20px;
+}
+
+.hintalaskuri label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.hintalaskuri input[type="number"],
+.hintalaskuri input[type="submit"] {
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	background-color: #666;
+	color: white;
+}
+
+.hintalaskuri input[type="submit"] {
+	background-color: #555;
+	cursor: pointer;
+}
+
+
+#map {
+	height: 400px;
+	width: 100%;
+  }

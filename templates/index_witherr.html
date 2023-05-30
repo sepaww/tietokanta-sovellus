@@ -1,13 +1,21 @@
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css')}}">
+</head>
+
+
 Username or password incorrect. Register a new account if you dont have one yet.
-<form action="/home" method="POST">
-    Username
-    <input type="text" name="name">
-    <br>
-    Password:
-    <input type="text" name="pass">
-    <br>
-    <input type="submit" value="Login">
-</form>
-<form action="/register" method="POST">
-    <input type="submit" value="Register">
-</form>
+<div class="form-container">
+    <form action="/logcheck" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="name">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="pass">
+        <br>
+        <input type="submit" value="Login">
+    </form>
+    <form action="/register" method="POST">
+        <input type="submit" value="Register">
+    </form>
+</div>

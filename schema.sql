@@ -4,6 +4,7 @@ CREATE TABLE users (
     password TEXT,
     is_admin BOOLEAN
 );
+
 CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users,

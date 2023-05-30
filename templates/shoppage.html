@@ -1,5 +1,5 @@
 <head>
-    <title>Dark Shop</title>
+    <title>Ostoscorp</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='shopstyle.css') }}">
   </head>
   <body>
@@ -20,6 +20,7 @@
       </div>
       <div class="star-rating">
         <form action="{{ url_for('addrating', tid=tid) }}" method="POST">
+          <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
           <input type="radio" id="star5" name="rating" value="5" src="{{ url_for('static', filename='emptystar.png') }}"/>
           <label for="star5"></label>
           <input type="radio" id="star4" name="rating" value="4" src="{{ url_for('static', filename='emptystar.png') }}"/>
@@ -34,13 +35,25 @@
         </form>
         <p>Average rating: {{ avgrate }}</p>
       </div>
+      <a href="#w_items" id="reveal-button">Show items</a>
+
+        <div id="w_items" >
+          
+    
+          {% for item in itemlist %}
+            <p>{{item.name}} - {{item.price}}</p>
+          {% endfor %}
+         
+        </div>
       <div class="comment-section">
         <h2 class="comment-title">Leave a Comment</h2>
         <form class="comment-form" action="/addcomment" method="POST">
+          <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
           <input type="hidden" name="id" value="{{info[0]}}">
           <textarea class="comment-input" name="comment" placeholder="Write your comment here"></textarea>
           <button class="comment-submit">Submit</button>
         </form>
+        
         {% if comments is iterable %}
           {% for comment in comments %}
           <div class="commentbox">

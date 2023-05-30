@@ -1,12 +1,19 @@
-<form action="/REGCHECK" method="POST">
-    Username
-    <input type="text" name="name">
-    <br>
-    Password:
-    <input type="text" name="pass">
-    <br>
-    Password again:
-    <input type="text" name="pass2">
-    <br>
-    <input type="submit" value="Register">
-</form>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css')}}">
+</head>
+
+<div class="form-container">
+    <form action="/REGCHECK" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="name">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="pass">
+        <br>
+        <label for="password-confirm">Password again:</label>
+        <input type="password" id="password-confirm" name="pass2">
+        <br>
+        <input type="submit" value="Register">
+    </form>
+</div>

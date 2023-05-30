@@ -1,0 +1,35 @@
+.form-container {
+    position: relative;
+    size: 25%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #333;
+    padding: 20px;
+    width: 300px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.form-container input[type="submit"] {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #666;
+}

@@ -1,3 +1,9 @@
+<header>
+    <title>Ostoscorp</title>
+    <form action="/home" method="POST">
+      <input class="homebutton" type="submit" value="home">
+    </form>
+  </header>
 add store
 <form action="/addstore" method="POST" enctype="multipart/form-data">
     store name:
@@ -10,8 +16,9 @@ add store
     <input type="text" name="y">
     <br>
     possible picture:
-    <input type="file" name="picture" accept="image/*">
+    <input type="file" name="picture" accept="image/png">
     <br>
+    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
     <input type="submit" value="add">
 </form>
 
@@ -26,6 +33,14 @@ add item
     items's name:
     <input type="text" name="item_name">
     <br>
+    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
     <input type="submit" value="add">
 </form>
-
+<br>
+mass add items (only for testing: adds 1000 random items with random prices to random stores)
+<br>
+click about 10 times to fill the shops
+<form action="/massadd" method="POST">
+    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+    <input type="submit" value="add ">
+</form>

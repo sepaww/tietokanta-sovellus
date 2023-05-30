@@ -1,0 +1,63 @@
+
+<head>
+    <title>Ostoscorp</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .form-container {
+            margin-top: 20px;
+        }
+        
+        input[type="submit"] {
+            background-color: #fff;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .homebutton {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+          }
+          
+          .homebutton:hover {
+            background-color: #555;
+          }
+    </style>
+</head>
+
+<header>
+    <form action="/home" method="POST">
+      <input class="homebutton" type="submit" value="home">
+    </form>
+</header>
+<div class="container">
+    {% if na==True %}
+    <h1>No shop has all the wanted items</h1>
+    {% else %}
+    <h1>The cheapest shop for the requested items is {{name[0]}} at the total price of {{price}}.</h1>
+    <div class="form-container">
+        <form action="/homeshop/{{id}}">
+            <input type="submit" value="Go to Shop page">
+        </form>
+    </div>
+    {% for valuetuple in infolist %}
+    <h3>Item {{valuetuple[0]}} available at the price of {{valuetuple[1]}} in total {{valuetuple[2]}}</h3>
+    {% endfor %}
+    {% endif %}
+</div>

@@ -171,3 +171,13 @@ body {
   .homebutton:hover {
     background-color: #555;
   }
+  #w_items {
+    display: none;
+  }
+  
+  #w_items:target {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    
+  }
