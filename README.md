@@ -37,8 +37,16 @@
   ```bash
 git clone https://github.com/sepaww/tietokanta-sovellus.git
 ```
-  - luo kansioon oma venv sekä .env kansio
-  - sijoita .env kansioon postgresql tietokannan nimi
+  - luo kansioon oma venv sekä .env tiedosto
+  ```bash
+  python3 -m venv venv
+  ```
+  - Aktivoi venv:
+  ```bash
+  (linux): source venv/bin/activate
+  (windows): venv\Scripts\activate
+  ```
+  - sijoita .env tiedostoon postgresql tietokannan nimi muodossa DATABASE_URL="(nimi)"
   - asenna virtuaaliympäristöön riippuvuudet:
   ```bash
   pip install -r requirements.txt
@@ -48,3 +56,8 @@ git clone https://github.com/sepaww/tietokanta-sovellus.git
   psql < schema.sql
    ```
   - käynnistä app.py ja rekisteröi käyttäjä. Ensimmäisestä käyttäjästä tulee ylläpitäjä
+  
+  ##Seuraavaksi
+  - ohjelman koodin refrakturointi niin ettei app sisällä kaikkea flaskia.
+  - tuotantoon flyhyn
+  - ulkoasu parantelut
