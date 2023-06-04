@@ -46,7 +46,7 @@ git clone https://github.com/sepaww/tietokanta-sovellus.git
   (linux): source venv/bin/activate
   (windows): venv\Scripts\activate
   ```
-  - sijoita .env tiedostoon postgresql tietokannan nimi muodossa DATABASE_URL="(nimi)"
+  - sijoita .env tiedostoon postgresql tietokannan nimi muodossa DATABASE_URL="(nimi)" ja SECRET_KEY='(oma avain)'
   - asenna virtuaaliympäristöön riippuvuudet:
   ```bash
   pip install -r requirements.txt
