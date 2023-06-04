@@ -1,3 +1,5 @@
+## Testausohje
+- kun käyttöönotto on onnistunut, ensimmäisestä rekisteröidystä käyttäjästä tulee sivun admin. adminilla pääsee sivulle /adminpage, missä kannattaa lisätä vaikka 3 uutta kauppaa sovellukseen (HUOM ei kannata laittaa kuvia ne ei näy. Kaupoille kysytään myös koordinaatit, joita ei käytetä tällä hetkellä). Kauppojen lisäämisen jälkeen kannattaa painaa massadd näppäintä muutaman kerran. Nyt sovelluksen tulisi pyöriä järkevästi ja kauppojen tulisi olla täynnä tuotteita eri hinnoilla. Kauppoja voi luoda lisää mieleisen määrän sekä lisätä niihin haluttuja tuotteita adminpagella joko manuaalisesti add product formilla tai välittömästi massadd näppäimellä.
 # Kauppakassi sovellus
 - Sovelluksen tavoitteena on helpottaa käyttäjän ruokakauppa käyntejä.
 - Sovellukseen kirjaudutaan omilla käyttäjätunnuksilla. Kaikki käyttäjät kuuluvat käyttäjä luokaan
@@ -8,6 +10,7 @@
 - Tietokannan rakenne löytyy schema.sql tiedostosta
 
 ## Tilannekatsauas
+
 - Tällä hetkellä sovelluksesta löytyy lähes kaikki mainitut ominaisuudet. Adminilla ei vielä ole poisto ominaisuutta, jolla poistaa kommentti tai tuote tietokannasta.
 - Halvimman tuotteen haku palauttaa onnistuneesti halutun kaupan sekä tuotteiden hinnat yhdessä ja erikseen. Tilanteessa, jossa yksikään kauppa ei tarjoa kauppalistaa kokonaisuudessaan, palautetaan tieto haun epäonnistumisesta
 - visuaalinen puoli on suht valmis. Jotain hiomista/polishaamista saattaa tapahtua
@@ -61,3 +64,5 @@ git clone https://github.com/sepaww/tietokanta-sovellus.git
   - ohjelman koodin refrakturointi niin ettei app sisällä kaikkea flaskia.
   - tuotantoon flyhyn
   - ulkoasu parantelut
+  - kuvien fiksaus
+  - paremmat virheilmoitukset vääristä inputeista
