@@ -4,7 +4,14 @@ CREATE TABLE users (
     password TEXT,
     is_admin BOOLEAN
 );
-
+CREATE TABLE shops (
+    id SERIAL PRIMARY KEY,
+    name TEXT,
+    cord_x INTEGER,
+    cord_y INTEGER,
+    has_pic BOOLEAN,
+    picture BYTEA
+);
 CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users,
@@ -18,14 +25,7 @@ CREATE TABLE likes (
     target_id INTEGER REFERENCES comments,
     user_id INTEGER REFERENCES users
 );
-CREATE TABLE shops (
-    id SERIAL PRIMARY KEY,
-    name TEXT,
-    cord_x INTEGER,
-    cord_y INTEGER,
-    has_pic BOOLEAN,
-    picture BYTEA
-);
+
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name TEXT,
