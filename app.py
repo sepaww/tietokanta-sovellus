@@ -79,7 +79,7 @@ def logcheck():
             session["auth"] = name_hash
             session["csrf_token"] = secrets.token_hex(16)
             return redirect("/home")
-        return render_template("index_witherr.html")
+    return render_template("index_witherr.html")
 
 
 @app.route("/home", methods=["POST", "GET"])
@@ -340,8 +340,8 @@ def addstore():
             pic = request.files.get("picture")
 
             if pic is None or pic.filename == "":
-                db.session.execute(text("INSERT INTO shops (name, cord_x, cord_y,has_pic, picture) VALUES (:name, :x, :y, :hasp, :pic)"), {
-                                   "name": name, "x": x, "y": y, "hasp": False, "pic": 0})
+                db.session.execute(text("INSERT INTO shops (name, cord_x, cord_y,has_pic) VALUES (:name, :x, :y, :hasp)"), {
+                                   "name": name, "x": x, "y": y, "hasp": False})
             else:
                 picc = request.files["picture"]
                 pic = picc.read()
