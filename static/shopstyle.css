@@ -171,6 +171,9 @@ body {
   .homebutton:hover {
     background-color: #555;
   }
+  .dele {
+    color: white
+  }
   #w_items {
     display: none;
   }
@@ -181,3 +184,5 @@ body {
     grid-gap: 10px;
     
   }
+
+  

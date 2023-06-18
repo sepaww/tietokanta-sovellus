@@ -1,5 +1,5 @@
 <head>
-    <title>Ostoscorp</title>
+    <title>PriceCorp</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='shopstyle.css') }}">
   </head>
   <body>
@@ -65,6 +65,9 @@
               <img class="updoot" src="{{ url_for('static', filename='upvote.png') }}" alt="Like" />
             </a>
           </div>
+          {% if is_admin %}
+          <a class="dele" href="{{ url_for('delete', cid=comment[4], sid=tid) }}">Delete</a>
+          {% endif %}
           {% endfor %}
         {% endif %}
       </div>

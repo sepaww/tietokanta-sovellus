@@ -33,3 +33,6 @@
 .form-container input[type="submit"]:hover {
     background-color: #666;
 }
+.register-button{
+    color:white
+}

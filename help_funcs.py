@@ -1,3 +1,20 @@
+
+from flask import session
+from werkzeug.security import check_password_hash
+from datab import db
+from sqlalchemy import text
+
+
+
+
+
+
+
+
+
+
+
+
 def name_check(name):
     if len(name)>20:
         print("bad name")
@@ -12,6 +29,37 @@ def comment_check(comment):
     if len(comment)>2000:
         return False
     return True
+
+def auth_check(name, hash):
+    if check_password_hash(hash, name):
+        return True
+    return False
+
+
+def del_session_vals():
+    if "username" in session:
+        del session["username"]
+    if "auth" in session:
+        del session["auth"]
+
+
+def form_check(form):
+    if session["csrf_token"] != form:
+        return False
+    return True
+    
+
+def give_user_id():
+    ret = db.session.execute(text("SELECT id FROM users WHERE name = :name"), {
+                             "name": session["username"]}).fetchone()
+    return ret[0]
+
+
+
+
+
+
+
 
 list_of_items=[
     "apples",

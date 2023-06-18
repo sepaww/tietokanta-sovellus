@@ -1,8 +1,7 @@
 <head>
-	<title>Ostoscorp</title>
+	<title>PriceCorp</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Ostoscorp</title>
 	<link rel="stylesheet" , href="{{ url_for('static', filename='style.css') }}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +18,7 @@
 			</form>
 		</div>
 		{% endif %}
-		<h1>Ostoscorp</h1>
+		<h1>PriceCorp</h1>
 		<h3>the place where prices meet your demand</h3>
 		<form action="/logout" method="POST">
 			<input type="submit" value="log out">
@@ -49,33 +48,17 @@
 		{% endfor %}
 	</main>
 	<div class="hintalaskuri">
-		Hintalaskuri
+		Product Price Calculator
 		<form action="/findcheapest" method="POST">
 			<label for="amount">Amount of items to be bought?</label>
 			<input type="number" name="amount" id="amount" min="1" max="50">
 			<input type="submit" value="go to form">
 		</form>
 	</div>
-	<div id="map"></div>
+	
 	<br>
 	<br>
-	<script>
-		function initMap() {
-			const mypos = { lat: 60.18728442921328, lng: 24.935968785298318 };
-			const map = new google.maps.Map(document.getElementById("map"), {
-				zoom: 4,
-				center: myLatLng,
-			});
 
-			new google.maps.Marker({
-				position: mypos,
-				map,
-				title: "Hello World!",
-			});
-		}
-
-		window.initMap = initMap;
-	</script>
 	<br>
 	<br>
 	<br>
