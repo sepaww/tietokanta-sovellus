@@ -55,6 +55,3 @@ git clone https://github.com/sepaww/tietokanta-sovellus.git
    ```
   - käynnistä app.py ja rekisteröi käyttäjä. Ensimmäisestä käyttäjästä tulee ylläpitäjä
   
-  ##Seuraavaksi
-  - tuotantoon flyhyn
-  - kuvien fiksaus
