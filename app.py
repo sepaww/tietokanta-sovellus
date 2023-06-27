@@ -1,4 +1,5 @@
 from flask import Flask
+from sqlalchemy import text
 from flask import redirect, render_template, make_response
 from os import getenv
 import base64
@@ -38,11 +39,9 @@ def home():
     return site_functions.home()
 
 
-@app.route("/showpic/<pic>", methods=["POST", "GET"])
-def showpic(pic):
-    response = make_response(pic)
-    response.headers.set("Content-Type", "image/png")
-    return response
+@app.route("/showpic/<int:id>", methods=["POST", "GET"])
+def showpic(id):
+    return site_functions.pic_giver(id)
 
 
 @app.route("/register", methods=["GET"])

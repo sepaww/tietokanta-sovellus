@@ -158,7 +158,7 @@ def submit_wanted_items():
     for item in items:
         price = db.session.execute(text("SELECT price FROM products WHERE name = :name AND shop_id = :id"), {
                                    "name": item[0], "id": idd}).fetchone()[0]
-        ret_prices.append((item[0], price, price*item[1]))
+        ret_prices.append((item[0], price, round(price*item[1], 2)))
     print(name, id)
     return render_template("result.html", price=round(cheapest,2), name=name, id=idd, na=not_available, infolist=ret_prices)
 

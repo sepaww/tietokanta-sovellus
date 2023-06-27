@@ -30,7 +30,7 @@ CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name TEXT,
     price FLOAT,
-    shop_id INTEGER
+    shop_id INTEGER REFERENCES shops
 );
 CREATE TABLE ratings (
     id SERIAL PRIMARY KEY,

@@ -1,5 +1,6 @@
 ## Testausohje
-- kun käyttöönotto on onnistunut, ensimmäisestä rekisteröidystä käyttäjästä tulee sivun admin. adminilla pääsee sivulle /adminpage, missä kannattaa lisätä vaikka 3 uutta kauppaa sovellukseen (HUOM ei kannata laittaa kuvia ne ei näy. Kaupoille kysytään myös koordinaatit, joita ei käytetä tällä hetkellä). Kauppojen lisäämisen jälkeen kannattaa painaa massadd näppäintä muutaman kerran. Nyt sovelluksen tulisi pyöriä järkevästi ja kauppojen tulisi olla täynnä tuotteita eri hinnoilla. Kauppoja voi luoda lisää mieleisen määrän sekä lisätä niihin haluttuja tuotteita adminpagella joko manuaalisesti add product formilla tai välittömästi massadd näppäimellä.
+- kun käyttöönotto on onnistunut, ensimmäisestä rekisteröidystä käyttäjästä tulee sivun admin. adminilla pääsee sivulle /adminpage, missä kannattaa lisätä vaikka 3 uutta kauppaa sovellukseen. Kauppojen lisäämisen jälkeen kannattaa painaa massadd näppäintä muutaman kerran. Nyt sovelluksen tulisi pyöriä järkevästi ja kauppojen tulisi olla täynnä tuotteita eri hinnoilla. Kauppoja voi luoda lisää mieleisen määrän sekä lisätä niihin haluttuja tuotteita adminpagella joko manuaalisesti add product formilla tai välittömästi massadd näppäimellä.
+
 # Kauppakassi sovellus
 - Sovelluksen tavoitteena on helpottaa käyttäjän ruokakauppa käyntejä.
 - Sovellukseen kirjaudutaan omilla käyttäjätunnuksilla. Kaikki käyttäjät kuuluvat käyttäjä luokkaan
@@ -8,10 +9,6 @@
 - Halvimman kaupan haku toteutetaan kauppalistan muodossa saatavilla olevista tuotteista, ja kun kauppalista on valmis, käyttäjä voi hakea ilmoittamiensa tuotteiden halvinta kokonaishintaa, eli missä kannattaa käydä ostoksilla, jotta saa tuotteet mahdollisimman halvalla.
 - Tietokannan rakenne löytyy schema.sql tiedostosta
 
-## Tilannekatsauas
-
-- Tällä hetkellä sovellus on aikalailla valmis
-- Sovelluksessa on mahdollisuus tallentaa kuvia kaupoille. Tällä hetkellä ominaisuus ei toimmi jostakin syystä. Kaupat, joille ei ole annettu kuvaa käyttävät sovellukseen sijoitettua placeholderia.Todennäköisesti kuvia en tule saamaan näkyviin ongelmien vuoksi. Kaupoille jätetään myös koordinaatit, mutta kartta ominaisuutta ei välttämättä lisätä.
 
 ## Toiminnot
 -Koostuu sivuista:

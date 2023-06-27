@@ -31,6 +31,8 @@ main {
 	text-align: center;
 	position:relative;
 	overflow: hidden;
+	
+	max-height: 500px;
 }
 
 .pillar img {
@@ -95,8 +97,10 @@ main {
 }
 
 .logo{
-	max-height: 300px;
-	max-width: 300px;
+	width:90%;
+	height:1%;
+	display: block;
+	object-fit: contain;
 }
 
 .hintalaskuri {
@@ -135,7 +139,3 @@ main {
 }
 
 
-#map {
-	height: 400px;
-	width: 100%;
-  }

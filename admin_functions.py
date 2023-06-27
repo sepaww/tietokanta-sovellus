@@ -21,13 +21,30 @@ def addstore():
         if db.session.execute(text("SELECT is_admin FROM users WHERE name = :name"), {"name": session["username"]}).fetchone()[0]:
 
             name = request.form["name"]
+            if type(name)!=str or name=="":
+                return ("no valid name given")
             sql = text("SELECT id FROM shops WHERE name=:name")
             result = db.session.execute(sql, {"name": name})
             if result.rowcount != 0:
                 return "already exists"
 
             x = request.form["x"]
+            if x=="":
+                x=0
+            else:
+                try:
+                    x=int(x)
+                except:
+                    return ("given x cord is not a valid integer")
             y = request.form["y"]
+            if y=="":
+                y=0
+            else:
+                try:
+                    y=int(y)
+                except:
+                    return ("given y cord is not a valid integer")
+                
             pic = request.files.get("picture")
 
             if pic is None or pic.filename == "":
@@ -40,7 +57,9 @@ def addstore():
                     return "Too big file"
                 db.session.execute(text("INSERT INTO shops (name, cord_x, cord_y,has_pic, picture) VALUES (:name, :x, :y, :hasp, :pic)"), {
                                    "name": name, "x": x, "y": y, "hasp": True, "pic": pic})
+                
             db.session.commit()
+            
             return redirect("/home")
     return redirect("/")
 
@@ -78,12 +97,20 @@ def additem():
             shop_name = request.form["shop_name"]
             result = db.session.execute(sql, {"name": shop_name})
             if result.rowcount == 0:
-                return redirect("/home")
+                return ("no given shop exists")
 
             id = result.fetchone()[0]
             price = request.form["price"]
+            if price=="":
+                return ("no price given")
+            try:
+                float(price)
+            except:
+                return("given price is not a known number")
             price=round(float(price),2)
             item_name = request.form["item_name"]
+            if item_name=="":
+                return ("no name for item has been given")
             if len(db.session.execute(text("SELECT price FROM products WHERE name = :name AND shop_id = :id"), {"name": item_name, "id": id}).fetchall()) != 0:
                 db.session.execute(text("UPDATE products SET price = :price WHERE name = :name AND shop_id = :id"), {
                                    "name": item_name, "id": id, "price": price})

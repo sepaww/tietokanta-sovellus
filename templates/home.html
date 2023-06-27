@@ -29,7 +29,7 @@
 		<section class="pillar">
 			<a href="{{url_for('homeshop', id=shoplist[i].id)}}">
 				{% if shoplist[i][4]==True %}
-				<img class="logo" src="{{ url_for('showpic', pic=shoplist[i][5]) }}" alt="shop logo">
+				<img class="logo" src="{{ url_for('showpic', id=shoplist[i][0]) }}" alt="shop logo">
 				{% else %}
 				<img class="logo" src="{{ url_for('static', filename='placeholder.PNG') }}" alt="Shop logo">
 				{% endif %}

@@ -3,7 +3,7 @@ from sqlalchemy import text
 from datab import db
 
 from help_funcs import form_check, auth_check, name_check, check_password_hash, del_session_vals, passw_check
-from flask import redirect, render_template, request, session
+from flask import redirect, render_template, request, session, make_response
 import secrets
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -128,3 +128,11 @@ def adminpage():
                 
                 return render_template("adminpage.html")
     return redirect("/")
+
+def pic_giver(id):
+    sql = text("SELECT picture FROM shops WHERE shops.id=:id")
+    result = db.session.execute(sql, {"id":id})
+    data = result.fetchone()[0]
+    response = make_response(bytes(data))
+    response.headers.set("Content-Type", "image/png")
+    return response 
